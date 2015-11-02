@@ -50,8 +50,11 @@ gulp.task('watch', function(){
     'app.production.coffee',
     '!public/**/*'],
     ['roots:recompile']);
-    gulp.watch('assets/**/*.scss', ['prefix']);
+    gulp.watch('assets/**/*', ['prefix']);
 });
 
-gulp.task('default',['clean', 'roots:compile','prefix', 'watch'], function(){
+gulp.task('dev', ['clean', 'roots:compile', 'watch'], function(){
+});
+
+gulp.task('default', ['prefix'], function(){
 });
